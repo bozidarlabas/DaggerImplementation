@@ -20,9 +20,10 @@ public class VehicleModule {
     }
 
     @Provides @Singleton
-    Vehicle provideVehicle(){
-        return new Vehicle(new Motor());
+    Vehicle provideVehicle(Motor motor){
+        return new Vehicle(motor);
     }
+
 }
 
 //@Module - for the classes whose methods provides dependencies
