@@ -11,6 +11,7 @@
     tools:context=".MainActivityFragment">
 
     <TextView
+        android:text="@string/nothing"
         android:id="@+id/text_stored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

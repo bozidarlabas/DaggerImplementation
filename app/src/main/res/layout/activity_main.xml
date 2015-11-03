@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fragment_a"
-        android:name="slidenerd.vivz.d2demo.FragmentA"
+        android:name="com.bozidar.labas.storageexample.fragment.FragmentA"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/fragment_b"
-        android:name="slidenerd.vivz.d2demo.FragmentB"
+        android:name="com.bozidar.labas.storageexample.fragment.FragmentB"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
