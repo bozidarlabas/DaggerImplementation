@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.bozidar.labas.dagger2github"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'dagger2'
+            keyPassword '123456'
+            storeFile file('/Users/macbook/Workspaces/AndroidStudio/Dagger/Dagger2Github/app/release-key.jks')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false  //wont release logs
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug{
+            debuggable true
+            applicationIdSuffix ".debug"
+
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+}
