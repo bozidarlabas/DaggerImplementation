@@ -4,12 +4,15 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,5 +36,15 @@ public class MainActivity extends AppCompatActivity {
     private void injectDemoComponent() {
         DaggerApplication.getComponent().inject(this);
         text.setText(resources.getString(R.string.injected_text));
+    }
+
+    @OnCheckedChanged(R.id.main_checkbox)
+    public void rememberMe(CompoundButton button, boolean checked){
+
+    }
+
+    @OnClick(R.id.goToRepositoriesList)
+    public void goToRepositoriesList(){
+
     }
 }
