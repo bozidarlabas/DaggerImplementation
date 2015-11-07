@@ -14,9 +14,9 @@ import retrofit.http.Path;
  * Created by Bozidar on 07.11.2015..
  */
 public interface GithubService {
-    @GET("/orgs/{org}/repos")
+    @GET("/users/{user}/repos")
     @Headers("User-Agent: DaggerDemo")
     Observable<List<Repository>> listRepos(
-            @Path("org") String org);
+            @Path("user") String user);
 
 }
