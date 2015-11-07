@@ -48,6 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.goToRepositoriesList)
     public void goToRepositoriesList(){
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, RepositoriesListActivity.class));
     }
 }

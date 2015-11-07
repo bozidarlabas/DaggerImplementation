@@ -1,5 +1,6 @@
 package com.bozidar.labas.dagger2.github;
 
+import com.bozidar.labas.dagger2.github.api.DebugApiModule;
 import com.bozidar.labas.dagger2.github.data.DebugDataModule;
 import com.bozidar.labas.dagger2github.DaggerApplication;
 import com.bozidar.labas.dagger2github.DaggerGraph;
@@ -15,7 +16,8 @@ import dagger.Component;
 @Singleton
 @Component(modules = {
         MainModule.class,
-        DebugDataModule.class
+        DebugDataModule.class,
+        DebugApiModule.class
 })
 public interface DaggerDemoComponent extends DaggerGraph {
     static final class Initializer {

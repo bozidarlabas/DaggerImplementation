@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.bozidar.labas.dagger2github.data.prefs.BooleanPreference;
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
 
@@ -26,6 +27,13 @@ public class DataModule {
     @Singleton
     SharedPreferences provideSharedPreferences(Application application){
         return application.getSharedPreferences("dagger", Context.MODE_PRIVATE);
+    }
+
+    @Provides
+    @Singleton
+    @UseMockBackend
+    BooleanPreference provideBooleanPreference(SharedPreferences sharedPreferences){
+        return new BooleanPreference(sharedPreferences, "use_mock", false);
     }
 
     public static OkHttpClient createHttpClient(Application application){
