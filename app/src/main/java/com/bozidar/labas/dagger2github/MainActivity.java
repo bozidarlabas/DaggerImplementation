@@ -1,5 +1,6 @@
 package com.bozidar.labas.dagger2github;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Resources resources;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.goToRepositoriesList)
     public void goToRepositoriesList(){
-
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
