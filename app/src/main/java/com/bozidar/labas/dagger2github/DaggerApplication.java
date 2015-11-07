@@ -2,8 +2,6 @@ package com.bozidar.labas.dagger2github;
 
 import android.app.Application;
 
-import com.bozidar.labas.dagger2.github.DaggerDemoComponent;
-
 /**
  * Created by Bozidar on 06.11.2015..
  */
