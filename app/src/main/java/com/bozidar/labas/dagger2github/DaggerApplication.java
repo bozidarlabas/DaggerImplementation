@@ -23,8 +23,7 @@ public class DaggerApplication extends Application {
         return graph;
     }
 
-    private void buildComponentAndInject() {
-        graph = DaggerDemoComponent.Initializer.init(this);
-
+    public static void buildComponentAndInject() {
+        graph = DaggerDemoComponent.Initializer.init(INSTANCE);
     }
 }

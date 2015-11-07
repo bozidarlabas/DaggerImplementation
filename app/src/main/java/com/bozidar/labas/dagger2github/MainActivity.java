@@ -8,6 +8,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.bozidar.labas.dagger2github.data.UseMockBackend;
+import com.bozidar.labas.dagger2github.data.prefs.BooleanPreference;
+
 import javax.inject.Inject;
 
 import butterknife.Bind;
@@ -26,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Resources resources;
 
+    @Inject
+    @UseMockBackend
+    BooleanPreference useMock;
+
 
 
     @Override
@@ -39,11 +46,15 @@ public class MainActivity extends AppCompatActivity {
     private void injectDemoComponent() {
         DaggerApplication.getComponent().inject(this);
         text.setText(resources.getString(R.string.injected_text));
+        checkBox.setChecked(useMock.get());
     }
 
     @OnCheckedChanged(R.id.main_checkbox)
     public void rememberMe(CompoundButton button, boolean checked){
+        useMock.set(checked);
 
+        // Need to rebuild graph because of changed settings which directly influences object creation (mock mode)
+        DaggerApplication.buildComponentAndInject();
     }
 
     @OnClick(R.id.goToRepositoriesList)
