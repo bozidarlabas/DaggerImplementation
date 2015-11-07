@@ -5,4 +5,5 @@ package com.bozidar.labas.dagger2github;
  */
 public interface DaggerGraph {
     void inject(MainActivity mainActivity);
+    void inject(RepositoriesListActivity listActivity);
 }
